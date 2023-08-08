@@ -57,6 +57,10 @@ const App = () => {
     ]);
   };
 
+  const resetTimer = () => {
+    setCurrentTime(0);
+  };
+
   const deleteTask = (taskId) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
@@ -76,7 +80,11 @@ const App = () => {
       >
         Time Tracker
       </Typography>
-      <Timer currentTime={currentTime} stopTimer={stopTimer} />
+      <Timer
+        currentTime={currentTime}
+        stopTimer={stopTimer}
+        resetTimer={resetTimer}
+      />
       <TaskList
         tasks={tasks}
         startTimer={startTimer}
