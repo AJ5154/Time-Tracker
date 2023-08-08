@@ -5,7 +5,7 @@ import { Button, TextField, Typography } from "@mui/material";
 const TaskList = ({ tasks, startTimer, stopTimer, addTask, deleteTask }) => {
   const [taskName, setTaskName] = useState("");
 
-  const handleAddTask = () => {
+  const addTaskHandler = () => {
     if (taskName.trim() !== "") {
       addTask(taskName);
       setTaskName("");
@@ -31,7 +31,7 @@ const TaskList = ({ tasks, startTimer, stopTimer, addTask, deleteTask }) => {
         <Button
           variant="outlined"
           size="medium"
-          onClick={handleAddTask}
+          onClick={addTaskHandler}
           style={{ height: "40px", marginLeft: "5px" }}
         >
           Add Task

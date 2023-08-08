@@ -3,11 +3,11 @@ import { Button } from "@mui/material";
 import React from "react";
 
 const TaskItem = ({ task, startTimer, stopTimer, deleteTask }) => {
-  const handleStartTimer = () => {
+  const startTimerHandler = () => {
     startTimer(task.id);
   };
 
-  const handleStopTimer = () => {
+  const stopTimerHandler = () => {
     stopTimer();
   };
 
@@ -16,9 +16,9 @@ const TaskItem = ({ task, startTimer, stopTimer, deleteTask }) => {
       <span>{task.name}</span>
       <span>Time: {task.time} seconds</span>
       {task.isRunning ? (
-        <Button onClick={handleStopTimer}>Stop</Button>
+        <Button onClick={stopTimerHandler}>Stop</Button>
       ) : (
-        <Button onClick={handleStartTimer}>Start</Button>
+        <Button onClick={startTimerHandler}>Start</Button>
       )}
       <Button onClick={() => deleteTask(task.id)}>
         <Delete />
